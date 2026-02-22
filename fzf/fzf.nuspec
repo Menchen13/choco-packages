@@ -27,32 +27,43 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
     <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
     <version>0.0.1</version>
-    <!-- <packageSourceUrl>Where is this Chocolatey package located (think GitHub)? packageSourceUrl is highly recommended for the community feed</packageSourceUrl>-->
+    <packageSourceUrl>https://github.com/Menchen13/choco-packages/tree/master/fzf</packageSourceUrl>
     <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
-    <!--<owners>__REPLACE_YOUR_NAME__</owners>-->
+    <owners>Menchen</owners>
     <!-- ============================== -->
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <!-- This section is about the software itself -->
     <title>fzf (Install)</title>
-    <authors>__REPLACE_AUTHORS_OF_SOFTWARE_COMMA_SEPARATED__</authors>
+    <authors>Junegunn Choi</authors>
     <!-- projectUrl is required for the community feed -->
-    <projectUrl>https://_Software_Location_REMOVE_OR_FILL_OUT_</projectUrl>
-    <!-- There are a number of CDN Services that can be used for hosting the Icon for a package. More information can be found here: https://docs.chocolatey.org/en-us/create/create-packages#package-icon-guidelines -->
-    <!-- Here is an example using Githack -->
-    <!--<iconUrl>http://rawcdn.githack.com/__REPLACE_YOUR_REPO__/master/icons/fzf.png</iconUrl>-->
+    <projectUrl>https://github.com/junegunn/fzf</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/Menchen13/choco-packages@master/fzf/icon.png</iconUrl>
     <!-- <copyright>Year Software Vendor</copyright> -->
     <!-- If there is a license Url available, it is required for the community feed -->
-    <!-- <licenseUrl>Software License Location __REMOVE_OR_FILL_OUT__</licenseUrl>
-    <requireLicenseAcceptance>true</requireLicenseAcceptance>-->
-    <!--<projectSourceUrl>Software Source Location - is the software FOSS somewhere? Link to it with this</projectSourceUrl>-->
-    <!--<docsUrl>At what url are the software docs located?</docsUrl>-->
+    <licenseUrl>https://github.com/junegunn/fzf/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/junegunn/fzf</projectSourceUrl>
+    <docsUrl>https://github.com/junegunn/fzf#usage</docsUrl>
     <!--<mailingListUrl></mailingListUrl>-->
-    <!--<bugTrackerUrl></bugTrackerUrl>-->
-    <tags>fzf SPACE_SEPARATED</tags>
-    <summary>__REPLACE__</summary>
-    <description>__REPLACE__MarkDown_Okay </description>
-    <!-- <releaseNotes>__REPLACE_OR_REMOVE__MarkDown_Okay</releaseNotes> -->
+    <bugTrackerUrl>https://github.com/junegunn/fzf/issues</bugTrackerUrl>
+    <tags>fzf cli </tags>
+    <summary>A command-line fuzzy finder.</summary>
+    <description><![CDATA[
+It's an interactive filter program for any kind of list; files, command
+history, processes, hostnames, bookmarks, git commits, etc. It implements
+a "fuzzy" matching algorithm, so you can quickly type in patterns with omitted
+characters and still get the results you want.
+
+Highlights
+----------
+
+- **Portable** — Distributed as a single binary for easy installation
+- **Fast** — Optimized to process millions of items instantly
+- **Versatile** — Fully customizable through an event-action binding mechanism
+- **All-inclusive** — Comes with integrations for Bash, Zsh, Fish, Vim, and Neovim
+    ]]></description>
+    <releaseNotes>https://github.com/junegunn/fzf/releases/latest</releaseNotes>
     <!-- =============================== -->
 
     <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->

@@ -24,6 +24,7 @@ function global:au_GetLatest {
         URL64         = $url64
         URLArm64      = $urlArm64
         ChecksumArm64 = $checksumArm64
+        ReleaseNotes  = $release.html_url
     }
 }
 
