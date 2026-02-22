@@ -1,0 +1,44 @@
+name: AU Package Updater
+
+# This dictates WHEN the script runs
+on:
+  # schedule:
+  #   - cron: '0 2 */3 * *'
+  workflow_dispatch: # This allows you to click a "Run workflow" button manually on GitHub
+
+jobs:
+  update_packages:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install AU Module
+        shell: powershell
+        run: Install-Module -Name au -Force -Scope CurrentUser
+
+      - name: Run AU update_all.ps1
+        shell: powershell
+        env:
+          # These grab the secure keys we will save in GitHub's settings later
+          github_api_key: ${{ secrets.GH_PAT }}
+          api_key: ${{ secrets.CHOCO_API_KEY }}
+          # This tells the AU framework to actually push the package to Chocolatey.org
+          au_Push: 'true' 
+        run: ./update_all.ps1
+
+      - name: Commit changes back to repository
+        shell: powershell
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add *
+          # If there are changes, commit and push them. If not, do nothing.
+          if (git diff --cached --quiet) {
+            Write-Host "No changes to commit."
+          } else {
+            git commit -m "AU: Package updates"
+            git push
+          }
