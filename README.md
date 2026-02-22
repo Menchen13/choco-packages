@@ -9,7 +9,6 @@ These packages are kept up-to-date automatically using the [Chocolatey Automatic
 | Package | Status | Description |
 |---|---|---|
 | [fzf](https://community.chocolatey.org/packages/fzf) | Automated | A command-line fuzzy finder. |
-|---|---|---|
 | [moolticute](https://community.chocolatey.org/packages/moolticute) | Manual | Moolticute is the companion app for the Mooltipass password manager. |
 
 ## Automation Details
