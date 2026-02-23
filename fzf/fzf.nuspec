@@ -34,7 +34,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <!-- This section is about the software itself -->
-    <title>fzf (Install)</title>
+    <title>fzf</title>
     <authors>Junegunn Choi</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://github.com/junegunn/fzf</projectUrl>

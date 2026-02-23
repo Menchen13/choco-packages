@@ -36,6 +36,7 @@ $Options = [ordered]@{
     
     #NoCheckChocoVersion = $true                            #Turn on this switch for all packages
 
+<# would be deleted on runner anyway
     Report = @{
         Type = 'markdown'                                   #Report type: markdown or text
         Path = "$PSScriptRoot\Update-AUPackages.md"         #Path where to save the report
@@ -54,6 +55,8 @@ $Options = [ordered]@{
         Github_UserRepo = $Env:github_user_repo             #User repo to be link to commits
         Path = "$PSScriptRoot\Update-History.md"            #Path where to save history
     }
+#>
+
 <#
     Gist = @{
         Id     = $Env:gist_id                               #Your gist id; leave empty for new private or anonymous gist
@@ -61,21 +64,31 @@ $Options = [ordered]@{
         Path   = "$PSScriptRoot\Update-AUPackages.md", "$PSScriptRoot\Update-History.md"       #List of files to add to the gist
     }
 #>
+<# Push is handled in the workflow with actions secrets 
     Git = @{
         User     = ''                                       #Git username, leave empty if github api key is used
         Password = $Env:github_api_key                      #Password if username is not empty, otherwise api key
     }
+#<
 
+<# i dont see the need to generate github releases,
+   the package will be pushed to chocolatey, that is effectively the release
     GitReleases  = @{
         ApiToken    = $Env:github_api_key                   #Your github api key
         ReleaseType = 'package'                             #Either 1 release per date, or 1 release per package
     }
+#>
 
+<# would be deleted on runner anyway
     RunInfo = @{
         Exclude = 'password', 'apikey', 'apitoken'          #Option keys which contain those words will be removed
         Path    = "$PSScriptRoot\update_info.xml"           #Path where to save the run info
     }
+#>
 
+<# dont need to send mails from this,
+   I get a mail saying my package release is going through validation
+   from chocolatey instead
     Mail = if ($Env:mail_user) {
             @{
                 To         = $Env:mail_user
@@ -90,6 +103,7 @@ $Options = [ordered]@{
                 SendAlways  = $false                        #Send notifications every time
              }
            } else {}
+#>
 
     ForcedPackages = $ForcedPackages -split ' '
     BeforeEach = {
