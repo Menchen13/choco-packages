@@ -2,8 +2,8 @@ name: AU Package Updater
 
 # This dictates WHEN the script runs
 on:
-  # schedule:
-  #   - cron: '0 2 */3 * *'
+  schedule:
+    - cron: '0 2 */3 * *'
   workflow_dispatch: # This allows you to click a "Run workflow" button manually on GitHub
 
 jobs:
@@ -26,24 +26,19 @@ jobs:
           github_api_key: ${{ secrets.GH_PAT }}
           api_key: ${{ secrets.CHOCO_API_KEY }}
           # This tells the AU framework to actually push the package to Chocolatey.org
-          # au_Push: 'true' 
-          au_Push: 'false'
+          au_Push: 'true' 
         run: ./update_all.ps1
 
-      - name: Dry Run Complete
+      - name: Commit changes back to repository
         shell: powershell
-        run: Write-Host "Dry run finished! Check the logs above to verify the package compiled successfully."
-
-      # - name: Commit changes back to repository
-      #   shell: powershell
-      #   run: |
-      #     git config --global user.name "github-actions[bot]"
-      #     git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      #     git add *
-      #     # If there are changes, commit and push them. If not, do nothing.
-      #     if (git diff --cached --quiet) {
-      #       Write-Host "No changes to commit."
-      #     } else {
-      #       git commit -m "AU: Package updates"
-      #       git push
-      #     }
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add *
+          # If there are changes, commit and push them. If not, do nothing.
+          if (git diff --cached --quiet) {
+            Write-Host "No changes to commit."
+          } else {
+            git commit -m "AU: Package updates"
+            git push
+          }
