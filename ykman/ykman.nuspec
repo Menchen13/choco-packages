@@ -22,50 +22,86 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!-- This section is about this package, although id and version have ties back to the software -->
     <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
     <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
-    <id>fzf</id>
+    <id>ykman</id>
     <!-- version should MATCH as closely as possible with the underlying software -->
     <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
     <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-    <version>0.70.0</version>
-    <packageSourceUrl>https://github.com/Menchen13/choco-packages/tree/master/fzf</packageSourceUrl>
+    <version>0.0.1</version>
+    <packageSourceUrl>https://github.com/Menchen13/choco-packages/tree/master/ykman</packageSourceUrl>
     <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
     <owners>Menchen</owners>
     <!-- ============================== -->
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <!-- This section is about the software itself -->
-    <title>fzf</title>
-    <authors>Junegunn Choi</authors>
+    <title>ykman (Install)</title>
+    <authors>Yubico</authors>
     <!-- projectUrl is required for the community feed -->
-    <projectUrl>https://github.com/junegunn/fzf</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/Menchen13/choco-packages@master/fzf/icon.png</iconUrl>
-    <!-- <copyright>Year Software Vendor</copyright> -->
+    <projectUrl>https://github.com/Yubico/yubikey-manager</projectUrl>
+    <!-- There are a number of CDN Services that can be used for hosting the Icon for a package. More information can be found here: https://docs.chocolatey.org/en-us/create/create-packages#package-icon-guidelines -->
+    <!-- Here is an example using Githack -->
+    <iconUrl>https://cdn.jsdelivr.net/gh/Menchen13/choco-packages@master/ykman/icon.png</iconUrl>
+    <copyright>2015 Yubico</copyright>
     <!-- If there is a license Url available, it is required for the community feed -->
-    <licenseUrl>https://github.com/junegunn/fzf/blob/master/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/Yubico/yubikey-manager/blob/main/COPYING</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <projectSourceUrl>https://github.com/junegunn/fzf</projectSourceUrl>
-    <docsUrl>https://github.com/junegunn/fzf#usage</docsUrl>
+    <projectSourceUrl>https://github.com/Yubico/yubikey-manager</projectSourceUrl>
+    <!--<docsUrl>At what url are the software docs located?</docsUrl>-->
     <!--<mailingListUrl></mailingListUrl>-->
-    <bugTrackerUrl>https://github.com/junegunn/fzf/issues</bugTrackerUrl>
-    <tags>fzf cli </tags>
-    <summary>A command-line fuzzy finder.</summary>
-    <description><![CDATA[
-It's an interactive filter program for any kind of list; files, command
-history, processes, hostnames, bookmarks, git commits, etc. It implements
-a "fuzzy" matching algorithm, so you can quickly type in patterns with omitted
-characters and still get the results you want.
+    <bugTrackerUrl>https://github.com/Yubico/yubikey-manager/issues</bugTrackerUrl>
+    <tags>yubico yubikey cli 2fa security </tags>
+    <summary>Python 3.10 (or later) library and command line tool for configuring a YubiKey.
+      If you're looking for a graphical application, check out Yubico Authenticator.
+    </summary>
+    <description>
+      ### Usage
 
-Highlights
-----------
+      For more usage information and examples, see the [YubiKey Manager CLI User Manual](https://docs.yubico.com/software/yubikey/tools/ykman/Using_the_ykman_CLI.html).
+      
+      ```text
+      Usage: ykman [OPTIONS] COMMAND [ARGS]...
+      
+        Configure your YubiKey via the command line.
+      
+        Examples:
+      
+          List connected YubiKeys, only output serial number:
+          $ ykman list --serials
+      
+          Show information about YubiKey with serial number 0123456:
+          $ ykman --device 0123456 info
+      
+      Options:
+        -d, --device SERIAL             specify which YubiKey to interact with by serial number
+        -r, --reader NAME               specify a YubiKey by smart card reader name (can't be used with --device or list)
+        -l, --log-level [ERROR|WARNING|INFO|DEBUG|TRAFFIC]
+                                        enable logging at given verbosity level
+        --log-file FILE                 write log to FILE instead of printing to stderr (requires --log-level)
+        --diagnose                      show diagnostics information useful for troubleshooting
+        -v, --version                   show version information about the app
+        --full-help                     show --help output, including hidden commands
+        -h, --help                      show this message and exit
+      
+      Commands:
+        info     show general information
+        list     list connected YubiKeys
+        config   enable or disable applications
+        fido     manage the FIDO applications
+        oath     manage the OATH application
+        openpgp  manage the OpenPGP application
+        otp      manage the YubiOTP application
+        piv      manage the PIV application
+      ```
+      
+      The `--help` argument can also be used to get detailed information about specific subcommands:
+      
+      ```text
+      ykman oath --help
+      ```
 
-- **Portable** — Distributed as a single binary for easy installation
-- **Fast** — Optimized to process millions of items instantly
-- **Versatile** — Fully customizable through an event-action binding mechanism
-- **All-inclusive** — Comes with integrations for Bash, Zsh, Fish, Vim, and Neovim
-
-**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
-    ]]></description>
-    <releaseNotes>https://github.com/junegunn/fzf/releases/latest</releaseNotes>
+      **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+    </description>
+    <releaseNotes>https://developers.yubico.com/yubikey-manager/Release_Notes.html</releaseNotes>
     <!-- =============================== -->
 
     <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
