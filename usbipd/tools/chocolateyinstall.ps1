@@ -1,9 +1,9 @@
 ﻿$ErrorActionPreference = 'Stop'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url64         = 'changeme'
-$checksum64    = 'changeme'
-$urlArm64      = 'changeme'
-$checksumArm64 = 'changeme'
+$url64         = 'https://github.com/dorssel/usbipd-win/releases/download/v5.3.0/usbipd-win_5.3.0_x64.msi'
+$checksum64    = '1c984914aec944de19b64eff232421439629699f8138e3ddc29301175bc6d938'
+$urlArm64      = 'https://github.com/dorssel/usbipd-win/releases/download/v5.3.0/usbipd-win_5.3.0_arm64.msi'
+$checksumArm64 = 'EFD7C4EB99B144C1623E616064A7B262F83D0994B0D7FDE16C95D4B07528B24D'
 
 if ($env:PROCESSOR_ARCHITECTURE -match 'ARM') {
     $url      = $urlArm64
