@@ -16,7 +16,7 @@ if ($env:PROCESSOR_ARCHITECTURE -match 'ARM') {
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
   unzipLocation = $toolsDir
-  url64bit      = $url64
+  url64bit      = $url
   checksum64    = $checksum
   checksumType64= 'sha256'
 }
