@@ -54,9 +54,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <description><![CDATA[
 ## How to use
 
-> [!TIP]
-> See the [wiki](https://github.com/dorssel/usbipd-win/wiki/Enable-Tab-Completion) on how to enable tab completion
-for PowerShell.
+**TIP** See the [wiki](https://github.com/dorssel/usbipd-win/wiki/Enable-Tab-Completion) on how to enable tab completion for PowerShell.
 
 ### Share Devices
 
@@ -66,13 +64,12 @@ To lookup and share devices, run the following commands with administrator privi
 ```powershell
 usbipd --help
 usbipd list
-usbipd bind --busid=<BUSID>
+usbipd bind --busid=[BUSID]
 ```
 
 Sharing a device is persistent; it survives reboots.
 
-> [!TIP]
-> See the [wiki](https://github.com/dorssel/usbipd-win/wiki/Tested-Devices) for a list of tested devices.
+**TIP** See the [wiki](https://github.com/dorssel/usbipd-win/wiki/Tested-Devices) for a list of tested devices.
 
 ### Connecting Devices
 
@@ -84,25 +81,24 @@ or when the device resets or is physically unplugged/replugged.
 From another (possibly virtual) machine running Linux, use the `usbip` client-side tool:
 
 ```bash
-usbip list --remote=<HOST>
-sudo usbip attach --remote=<HOST> --busid=<BUSID>
+usbip list --remote=[HOST]
+sudo usbip attach --remote=[HOST] --busid=[BUSID]
 ```
 
-> [!NOTE]
-> Client-side tooling exists for other operating systems such as Microsoft Windows, but not as part of this project.
+**NOTE** Client-side tooling exists for other operating systems such as Microsoft Windows, but not as part of this project.
 
 #### WSL 2
 
 You can attach the device from within Windows with the following command, which does not require administrator privileges:
 
 ```powershell
-usbipd attach --wsl --busid=<BUSID>
+usbipd attach --wsl --busid=[BUSID]
 ```
 
-> [!TIP]
-> Update WSL 2 with `wsl --update` to get the latest kernel, which supports most USB devices.
-> See the [wiki](https://github.com/dorssel/usbipd-win/wiki/WSL-support) on how to add drivers
-> for USB devices that are not supported by the default WSL 2 kernel.
+**TIP**
+Update WSL 2 with `wsl --update` to get the latest kernel, which supports most USB devices.
+See the [wiki](https://github.com/dorssel/usbipd-win/wiki/WSL-support) on how to add drivers
+for USB devices that are not supported by the default WSL 2 kernel.
 
 ### GUI
 
