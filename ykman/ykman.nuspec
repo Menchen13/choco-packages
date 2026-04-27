@@ -54,52 +54,52 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
       If you're looking for a graphical application, check out Yubico Authenticator.
     </summary>
     <description>
-      ### Usage
+### Usage
 
-      For more usage information and examples, see the [YubiKey Manager CLI User Manual](https://docs.yubico.com/software/yubikey/tools/ykman/Using_the_ykman_CLI.html).
+For more usage information and examples, see the [YubiKey Manager CLI User Manual](https://docs.yubico.com/software/yubikey/tools/ykman/Using_the_ykman_CLI.html).
       
-      ```text
-      Usage: ykman [OPTIONS] COMMAND [ARGS]...
+```text
+Usage: ykman [OPTIONS] COMMAND [ARGS]...
       
-        Configure your YubiKey via the command line.
+  Configure your YubiKey via the command line.
       
-        Examples:
+Examples:
       
-          List connected YubiKeys, only output serial number:
-          $ ykman list --serials
+  List connected YubiKeys, only output serial number:
+  $ ykman list --serials
       
-          Show information about YubiKey with serial number 0123456:
-          $ ykman --device 0123456 info
+  Show information about YubiKey with serial number 0123456:
+  $ ykman --device 0123456 info
       
-      Options:
-        -d, --device SERIAL             specify which YubiKey to interact with by serial number
-        -r, --reader NAME               specify a YubiKey by smart card reader name (can't be used with --device or list)
-        -l, --log-level [ERROR|WARNING|INFO|DEBUG|TRAFFIC]
-                                        enable logging at given verbosity level
-        --log-file FILE                 write log to FILE instead of printing to stderr (requires --log-level)
-        --diagnose                      show diagnostics information useful for troubleshooting
-        -v, --version                   show version information about the app
-        --full-help                     show --help output, including hidden commands
-        -h, --help                      show this message and exit
+Options:
+  -d, --device SERIAL             specify which YubiKey to interact with by serial number
+  -r, --reader NAME               specify a YubiKey by smart card reader name (can't be used with --device or list)
+  -l, --log-level [ERROR|WARNING|INFO|DEBUG|TRAFFIC]
+                                  enable logging at given verbosity level
+  --log-file FILE                 write log to FILE instead of printing to stderr (requires --log-level)
+  --diagnose                      show diagnostics information useful for troubleshooting
+  -v, --version                   show version information about the app
+  --full-help                     show --help output, including hidden commands
+  -h, --help                      show this message and exit
       
-      Commands:
-        info     show general information
-        list     list connected YubiKeys
-        config   enable or disable applications
-        fido     manage the FIDO applications
-        oath     manage the OATH application
-        openpgp  manage the OpenPGP application
-        otp      manage the YubiOTP application
-        piv      manage the PIV application
-      ```
+Commands:
+  info     show general information
+  list     list connected YubiKeys
+  config   enable or disable applications
+  fido     manage the FIDO applications
+  oath     manage the OATH application
+  openpgp  manage the OpenPGP application
+  otp      manage the YubiOTP application
+  piv      manage the PIV application
+```
       
-      The `--help` argument can also be used to get detailed information about specific subcommands:
+The `--help` argument can also be used to get detailed information about specific subcommands:
       
-      ```text
-      ykman oath --help
-      ```
+```text
+ykman oath --help
+```
 
-      **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
     </description>
     <releaseNotes>https://developers.yubico.com/yubikey-manager/Release_Notes.html</releaseNotes>
     <!-- =============================== -->
