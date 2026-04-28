@@ -1,9 +1,9 @@
 ﻿$ErrorActionPreference = 'Stop'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url64         = 'https://github.com/junegunn/fzf/releases/download/v0.71.0/fzf-0.71.0-windows_amd64.zip'
-$checksum64    = '15bf30fa658c596d740f0ce9a9a97b6b5d90566124903657d09fd109dd0973d2'
-$urlArm64      = 'https://github.com/junegunn/fzf/releases/download/v0.71.0/fzf-0.71.0-windows_arm64.zip'
-$checksumArm64 = '9D0DE41E8C40E8A7AC1EDB64FE93AAE96181ED93439E9E6D8D35DEDA61EE910B'
+$url64         = 'https://github.com/junegunn/fzf/releases/download/v0.72.0/fzf-0.72.0-windows_amd64.zip'
+$checksum64    = 'cce66ae7e442030334927bfbfd917690713e63d215aba93027f99807828fe239'
+$urlArm64      = 'https://github.com/junegunn/fzf/releases/download/v0.72.0/fzf-0.72.0-windows_arm64.zip'
+$checksumArm64 = '186AF4F9D30434B4EB34D670312D96FB7886A10C4C1CE9C64453DD0FA19AEDEC'
 
 if ($env:PROCESSOR_ARCHITECTURE -match 'ARM') {
     $url      = $urlArm64
