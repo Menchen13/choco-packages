@@ -5,11 +5,11 @@ $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
   unzipLocation = $toolsDir
   fileType      = 'MSI'
-  url64bit      = 'https://developers.yubico.com/yubikey-manager/Releases/yubikey-manager-5.9.1-win64.msi'
+  url64bit      = 'https://developers.yubico.com/yubikey-manager/Releases/yubikey-manager-5.9.2-win64.msi'
 
   softwareName  = 'YubiKey Manager CLI'
 
-  checksum64    = 'A8CDFD148886E61C55AD91D41FB353F218CD304F817D435B12765800E0FBBF12'
+  checksum64    = '54E5830C56FAFCDDE80037DE490A88DE4FE3AFC398FC2AD7CCBFFCFC6B93BE9F'
   checksumType64= 'sha256'
 
   silentArgs    = "/qn /norestart /l*v `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).MsiInstall.log`""
